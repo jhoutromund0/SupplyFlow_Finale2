@@ -44,7 +44,9 @@ namespace SupplyFlow
 
         private void btnCardapio_Click(object sender, EventArgs e)
         {
-
+            frmCardapio cardapio = new frmCardapio(admin, idUsuario, cargo);
+            cardapio.Show();
+            this.Close();
         }
 
         private void btnEditarVenda_Click(object sender, EventArgs e)

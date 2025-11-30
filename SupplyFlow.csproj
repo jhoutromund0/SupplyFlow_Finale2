@@ -103,29 +103,29 @@
     <Compile Include="ClassePagamento.cs" />
     <Compile Include="ClasseProduto.cs" />
     <Compile Include="ClasseVenda.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="frmEditarPagamento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="frmEditarPagamento.Designer.cs">
+      <DependentUpon>frmEditarPagamento.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="frmEditarCardapio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="frmEditarCardapio.Designer.cs">
+      <DependentUpon>frmEditarCardapio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form3.cs">
+    <Compile Include="frmEditarInsumos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form3.Designer.cs">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <Compile Include="frmEditarInsumos.Designer.cs">
+      <DependentUpon>frmEditarInsumos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form4.cs">
+    <Compile Include="frmCardapio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form4.Designer.cs">
-      <DependentUpon>Form4.cs</DependentUpon>
+    <Compile Include="frmCardapio.Designer.cs">
+      <DependentUpon>frmCardapio.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCadastroFunc.cs">
       <SubType>Form</SubType>
@@ -239,17 +239,17 @@
     <Compile Include="idNaoEncontradoException.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="frmEditarPagamento.resx">
+      <DependentUpon>frmEditarPagamento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="frmEditarCardapio.resx">
+      <DependentUpon>frmEditarCardapio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form3.resx">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <EmbeddedResource Include="frmEditarInsumos.resx">
+      <DependentUpon>frmEditarInsumos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form4.resx">
-      <DependentUpon>Form4.cs</DependentUpon>
+    <EmbeddedResource Include="frmCardapio.resx">
+      <DependentUpon>frmCardapio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCadastroFunc.resx">
       <DependentUpon>frmCadastroFunc.cs</DependentUpon>
