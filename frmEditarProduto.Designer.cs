@@ -37,7 +37,6 @@
             this.txtQtd = new System.Windows.Forms.TextBox();
             this.txtCategoria = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.btnExcluir = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.lblPreco = new System.Windows.Forms.Label();
             this.lblUniMed = new System.Windows.Forms.Label();
@@ -73,7 +72,6 @@
             this.btnVoltar.TabIndex = 12;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = false;
-            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // lblTela
             // 
@@ -135,21 +133,6 @@
             this.txtNome.Size = new System.Drawing.Size(451, 26);
             this.txtNome.TabIndex = 38;
             // 
-            // btnExcluir
-            // 
-            this.btnExcluir.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnExcluir.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluir.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnExcluir.Location = new System.Drawing.Point(506, 345);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(148, 54);
-            this.btnExcluir.TabIndex = 37;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = false;
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
-            // 
             // btnEditar
             // 
             this.btnEditar.BackColor = System.Drawing.Color.Teal;
@@ -157,7 +140,7 @@
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEditar.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnEditar.Location = new System.Drawing.Point(259, 345);
+            this.btnEditar.Location = new System.Drawing.Point(497, 345);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(148, 54);
             this.btnEditar.TabIndex = 30;
@@ -265,7 +248,6 @@
             this.Controls.Add(this.txtQtd);
             this.Controls.Add(this.txtCategoria);
             this.Controls.Add(this.txtNome);
-            this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.lblPreco);
             this.Controls.Add(this.lblUniMed);
@@ -296,7 +278,6 @@
         private System.Windows.Forms.TextBox txtQtd;
         private System.Windows.Forms.TextBox txtCategoria;
         private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Label lblPreco;
         private System.Windows.Forms.Label lblUniMed;

@@ -91,6 +91,7 @@
             this.Controls.Add(this.pnlCardapio);
             this.Name = "frmCardapio";
             this.Text = "Cardápio";
+            this.Load += new System.EventHandler(this.frmCardapio_Load);
             this.pnlCardapio.ResumeLayout(false);
             this.pnlCardapio.PerformLayout();
             this.ResumeLayout(false);
