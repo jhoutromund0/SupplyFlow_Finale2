@@ -39,6 +39,7 @@
             this.btnVoltarGerente = new System.Windows.Forms.Button();
             this.btnProdQuant = new System.Windows.Forms.Button();
             this.btnCadItemVenda = new System.Windows.Forms.Button();
+            this.btnEditarItemvenda = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,7 +69,7 @@
             this.btnEditarVenda.Name = "btnEditarVenda";
             this.btnEditarVenda.Size = new System.Drawing.Size(256, 46);
             this.btnEditarVenda.TabIndex = 7;
-            this.btnEditarVenda.Text = "Editar/Cancelar Venda";
+            this.btnEditarVenda.Text = "Editar Venda";
             this.btnEditarVenda.UseVisualStyleBackColor = false;
             this.btnEditarVenda.Click += new System.EventHandler(this.btnEditarVenda_Click);
             // 
@@ -134,7 +135,7 @@
             this.lblTela.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lblTela.Location = new System.Drawing.Point(3, 15);
             this.lblTela.Name = "lblTela";
-            this.lblTela.Size = new System.Drawing.Size(84, 24);
+            this.lblTela.Size = new System.Drawing.Size(110, 32);
             this.lblTela.TabIndex = 2;
             this.lblTela.Text = "Vendas";
             // 
@@ -199,6 +200,21 @@
             this.btnCadItemVenda.UseVisualStyleBackColor = false;
             this.btnCadItemVenda.Click += new System.EventHandler(this.btnCadItemVenda_Click);
             // 
+            // btnEditarItemvenda
+            // 
+            this.btnEditarItemvenda.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnEditarItemvenda.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditarItemvenda.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEditarItemvenda.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarItemvenda.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnEditarItemvenda.Location = new System.Drawing.Point(667, 196);
+            this.btnEditarItemvenda.Name = "btnEditarItemvenda";
+            this.btnEditarItemvenda.Size = new System.Drawing.Size(256, 61);
+            this.btnEditarItemvenda.TabIndex = 16;
+            this.btnEditarItemvenda.Text = "Editar Item de Venda";
+            this.btnEditarItemvenda.UseVisualStyleBackColor = false;
+            this.btnEditarItemvenda.Click += new System.EventHandler(this.btnEditarItemvenda_Click);
+            // 
             // frmVendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -206,6 +222,7 @@
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(935, 496);
             this.ControlBox = false;
+            this.Controls.Add(this.btnEditarItemvenda);
             this.Controls.Add(this.btnCadItemVenda);
             this.Controls.Add(this.btnProdQuant);
             this.Controls.Add(this.btnVoltarGerente);
@@ -239,5 +256,6 @@
         private System.Windows.Forms.Button btnVoltarGerente;
         private System.Windows.Forms.Button btnProdQuant;
         private System.Windows.Forms.Button btnCadItemVenda;
+        private System.Windows.Forms.Button btnEditarItemvenda;
     }
 }

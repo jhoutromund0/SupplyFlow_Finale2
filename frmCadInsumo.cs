@@ -13,6 +13,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static SupplyFlow.frmCadItemVenda;
 
 namespace SupplyFlow
 {
@@ -21,6 +22,7 @@ namespace SupplyFlow
         private Admin admin;
         private int idUsuario;
         private string cargo;
+        private string categoria;
         public frmCadInsumo(Admin admin, int idUsuario, string cargo)
         {
             InitializeComponent();
@@ -113,47 +115,31 @@ namespace SupplyFlow
         }
         private void frmCadInsumo_Load(object sender, EventArgs e)
         {
-            try
-            {
-                string conexao = @"server=127.0.0.1;uid=root;pwd=1234;database=supplyflow;ConnectionTimeout=1";
-                string query = "SELECT idProduto,descrição FROM produto";
-                string query2 = "SELECT idPrato, nome FROM cardapio";
-
-                using (MySqlConnection conn = new MySqlConnection(conexao))
+            rdbPrato.Checked = true;
+                try
                 {
-                    conn.Open();
-                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
-                    using (MySqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        lboProduto.Items.Clear();
+                    string conexao = @"server=127.0.0.1;uid=root;pwd=1234;database=supplyflow;ConnectionTimeout=1";
+                    string query = "SELECT idProduto,descrição FROM produto";
 
-                        while (reader.Read())
+                    using (MySqlConnection conn = new MySqlConnection(conexao))
+                    {
+                        conn.Open();
+                        using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
                         {
-                            lboProduto.Items.Add(new Produto
+                            lboProduto.Items.Clear();
+
+                            while (reader.Read())
                             {
-                                Id = reader.GetInt32("idProduto"),
-                                Desc = reader.GetString("descrição")
-                            });
+                                lboProduto.Items.Add(new Produto
+                                {
+                                    Id = reader.GetInt32("idProduto"),
+                                    Desc = reader.GetString("descrição")
+                                });
+                            }
                         }
                     }
-
-                    using (MySqlCommand cmd = new MySqlCommand(query2, conn))
-                    using (MySqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        lboCardapio.Items.Clear();
-
-                        while (reader.Read())
-                        {
-                            lboCardapio.Items.Add(new Cardapio
-                            {
-                                Id = reader.GetInt32("idPrato"),
-                                Nome = reader.GetString("nome")
-                            });
-                        }
-                    }
-                }
-
-
+                    carregarLista();
             }
             catch (MySqlException erro)
             {
@@ -178,12 +164,118 @@ namespace SupplyFlow
                 MessageBox.Show(sb.ToString());
             }
         }
+        
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             frmGerente gerente = new frmGerente(admin, idUsuario, cargo);
             gerente.Show();
             this.Close();
+        }
+
+        private void rdbAperitivo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbAperitivo.Checked)
+            {
+                categoria = "Aperitivo";
+                carregarLista();
+            }
+        }
+
+        private void rdbPrato_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbPrato.Checked)
+            {
+                categoria = "Prato Principal";
+                carregarLista();
+            }
+        }
+
+        private void rdbSobremesa_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbSobremesa.Checked)
+            {
+                categoria = "Sobremesa";
+                carregarLista();
+            }
+        }
+
+        private void rdbEntrada_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbEntrada.Checked)
+            {
+                categoria = "Entrada";
+                carregarLista();
+            }
+        }
+
+        private void rdbBebida_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbBebida.Checked)
+            {
+                categoria = "Bebida";
+                carregarLista();
+            }
+        }
+
+        public void carregarLista()
+        {
+            if (rdbAperitivo.Checked) categoria = "Aperitivo";
+            else if (rdbBebida.Checked) categoria = "Bebida";
+            else if (rdbEntrada.Checked) categoria = "Entrada";
+            else if (rdbPrato.Checked) categoria = "Prato Principal";
+            else if (rdbSobremesa.Checked) categoria = "Sobremesa";
+            try
+            {
+                string conexao = @"server=127.0.0.1;uid=root;pwd=1234;database=supplyflow;ConnectionTimeout=1";
+                string query = "SELECT idPrato, nome, categoria FROM cardapio WHERE categoria = @categoria";
+
+                using (MySqlConnection conn = new MySqlConnection(conexao))
+                {
+                    conn.Open();
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@categoria", categoria);
+
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            lboCardapio.Items.Clear();
+
+                            while (reader.Read())
+                            {
+                                lboCardapio.Items.Add(new Cardapio
+                                {
+                                    Id = reader.GetInt32("idPrato"),
+                                    Nome = reader.GetString("nome")
+                                });
+                            }
+                        }
+                    }
+                }
+            }
+            catch (MySqlException erro)
+            {
+                StringBuilder sb = new StringBuilder();
+
+                sb.AppendLine("Erro Banco!");
+                sb.AppendLine(erro.GetType().ToString());
+                sb.AppendLine(erro.Message);
+                sb.AppendLine("\n" + erro.StackTrace);
+
+                MessageBox.Show(sb.ToString());
+            }
+            //tratamento dos demais erros que possam ocorrer
+            catch (Exception erro)
+            {
+                StringBuilder sb = new StringBuilder();
+                sb.AppendLine("Exceção Desconhecida !!!");
+                sb.AppendLine(erro.GetType().ToString());
+                sb.AppendLine(erro.Message);
+                sb.AppendLine("\n" + erro.StackTrace);
+
+                MessageBox.Show(sb.ToString());
+            }
         }
     }
 }

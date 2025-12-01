@@ -38,6 +38,10 @@
             this.btnCadastrarFunc = new System.Windows.Forms.Button();
             this.btnInsumo = new System.Windows.Forms.Button();
             this.btnCadMesa = new System.Windows.Forms.Button();
+            this.btnEditarFunc = new System.Windows.Forms.Button();
+            this.btnEditarMesa = new System.Windows.Forms.Button();
+            this.btnEditarCard = new System.Windows.Forms.Button();
+            this.btnEditarInsumo = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +52,7 @@
             this.panel1.Controls.Add(this.lblTela);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(802, 54);
+            this.panel1.Size = new System.Drawing.Size(1277, 54);
             this.panel1.TabIndex = 21;
             // 
             // btnSair
@@ -58,7 +62,7 @@
             this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSair.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSair.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnSair.Location = new System.Drawing.Point(654, 0);
+            this.btnSair.Location = new System.Drawing.Point(1128, 0);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(148, 54);
             this.btnSair.TabIndex = 12;
@@ -73,7 +77,7 @@
             this.lblTela.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lblTela.Location = new System.Drawing.Point(3, 15);
             this.lblTela.Name = "lblTela";
-            this.lblTela.Size = new System.Drawing.Size(100, 24);
+            this.lblTela.Size = new System.Drawing.Size(131, 32);
             this.lblTela.TabIndex = 2;
             this.lblTela.Text = "Gerência";
             // 
@@ -101,7 +105,7 @@
             this.btnRelatorioVendas.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnRelatorioVendas.Location = new System.Drawing.Point(24, 352);
             this.btnRelatorioVendas.Name = "btnRelatorioVendas";
-            this.btnRelatorioVendas.Size = new System.Drawing.Size(256, 46);
+            this.btnRelatorioVendas.Size = new System.Drawing.Size(256, 73);
             this.btnRelatorioVendas.TabIndex = 24;
             this.btnRelatorioVendas.Text = "Relatório de Vendas";
             this.btnRelatorioVendas.UseVisualStyleBackColor = false;
@@ -146,7 +150,7 @@
             this.btnCadastrarFunc.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnCadastrarFunc.Location = new System.Drawing.Point(481, 95);
             this.btnCadastrarFunc.Name = "btnCadastrarFunc";
-            this.btnCadastrarFunc.Size = new System.Drawing.Size(256, 46);
+            this.btnCadastrarFunc.Size = new System.Drawing.Size(256, 73);
             this.btnCadastrarFunc.TabIndex = 26;
             this.btnCadastrarFunc.Text = "Cadastrar Funcionários";
             this.btnCadastrarFunc.UseVisualStyleBackColor = false;
@@ -161,7 +165,7 @@
             this.btnInsumo.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnInsumo.Location = new System.Drawing.Point(481, 391);
             this.btnInsumo.Name = "btnInsumo";
-            this.btnInsumo.Size = new System.Drawing.Size(256, 57);
+            this.btnInsumo.Size = new System.Drawing.Size(256, 80);
             this.btnInsumo.TabIndex = 27;
             this.btnInsumo.Text = "Cadastrar Insumo de Receita";
             this.btnInsumo.UseVisualStyleBackColor = false;
@@ -174,7 +178,7 @@
             this.btnCadMesa.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCadMesa.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadMesa.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCadMesa.Location = new System.Drawing.Point(481, 187);
+            this.btnCadMesa.Location = new System.Drawing.Point(481, 199);
             this.btnCadMesa.Name = "btnCadMesa";
             this.btnCadMesa.Size = new System.Drawing.Size(256, 46);
             this.btnCadMesa.TabIndex = 28;
@@ -182,13 +186,76 @@
             this.btnCadMesa.UseVisualStyleBackColor = false;
             this.btnCadMesa.Click += new System.EventHandler(this.btnCadMesa_Click);
             // 
+            // btnEditarFunc
+            // 
+            this.btnEditarFunc.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnEditarFunc.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditarFunc.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEditarFunc.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarFunc.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnEditarFunc.Location = new System.Drawing.Point(913, 95);
+            this.btnEditarFunc.Name = "btnEditarFunc";
+            this.btnEditarFunc.Size = new System.Drawing.Size(256, 73);
+            this.btnEditarFunc.TabIndex = 29;
+            this.btnEditarFunc.Text = "Editar Funcionários";
+            this.btnEditarFunc.UseVisualStyleBackColor = false;
+            this.btnEditarFunc.Click += new System.EventHandler(this.btnEditarFunc_Click);
+            // 
+            // btnEditarMesa
+            // 
+            this.btnEditarMesa.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnEditarMesa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditarMesa.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEditarMesa.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarMesa.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnEditarMesa.Location = new System.Drawing.Point(913, 199);
+            this.btnEditarMesa.Name = "btnEditarMesa";
+            this.btnEditarMesa.Size = new System.Drawing.Size(256, 46);
+            this.btnEditarMesa.TabIndex = 30;
+            this.btnEditarMesa.Text = "Editar Mesa";
+            this.btnEditarMesa.UseVisualStyleBackColor = false;
+            // 
+            // btnEditarCard
+            // 
+            this.btnEditarCard.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnEditarCard.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditarCard.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEditarCard.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarCard.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnEditarCard.Location = new System.Drawing.Point(913, 287);
+            this.btnEditarCard.Name = "btnEditarCard";
+            this.btnEditarCard.Size = new System.Drawing.Size(256, 57);
+            this.btnEditarCard.TabIndex = 31;
+            this.btnEditarCard.Text = "Editar Item do Cardápio";
+            this.btnEditarCard.UseVisualStyleBackColor = false;
+            this.btnEditarCard.Click += new System.EventHandler(this.btnEditarCard_Click);
+            // 
+            // btnEditarInsumo
+            // 
+            this.btnEditarInsumo.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnEditarInsumo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditarInsumo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEditarInsumo.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarInsumo.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnEditarInsumo.Location = new System.Drawing.Point(913, 391);
+            this.btnEditarInsumo.Name = "btnEditarInsumo";
+            this.btnEditarInsumo.Size = new System.Drawing.Size(256, 80);
+            this.btnEditarInsumo.TabIndex = 32;
+            this.btnEditarInsumo.Text = "Editar Insumo de Receita";
+            this.btnEditarInsumo.UseVisualStyleBackColor = false;
+            this.btnEditarInsumo.Click += new System.EventHandler(this.btnEditarInsumo_Click);
+            // 
             // frmGerente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(802, 483);
+            this.ClientSize = new System.Drawing.Size(1278, 483);
             this.ControlBox = false;
+            this.Controls.Add(this.btnEditarInsumo);
+            this.Controls.Add(this.btnEditarCard);
+            this.Controls.Add(this.btnEditarMesa);
+            this.Controls.Add(this.btnEditarFunc);
             this.Controls.Add(this.btnCadMesa);
             this.Controls.Add(this.btnInsumo);
             this.Controls.Add(this.btnCadastrarFunc);
@@ -220,5 +287,9 @@
         private System.Windows.Forms.Button btnCadastrarFunc;
         private System.Windows.Forms.Button btnInsumo;
         private System.Windows.Forms.Button btnCadMesa;
+        private System.Windows.Forms.Button btnEditarFunc;
+        private System.Windows.Forms.Button btnEditarMesa;
+        private System.Windows.Forms.Button btnEditarCard;
+        private System.Windows.Forms.Button btnEditarInsumo;
     }
 }

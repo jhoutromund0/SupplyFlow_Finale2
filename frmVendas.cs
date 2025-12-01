@@ -90,5 +90,12 @@ namespace SupplyFlow
             itemVenda.Show();
             this.Close();
         }
+
+        private void btnEditarItemvenda_Click(object sender, EventArgs e)
+        {
+            frmEditarItemVenda editItemV = new frmEditarItemVenda(admin, idUsuario, cargo);
+            editItemV.Show();
+            this.Close();
+        }
     }
 }

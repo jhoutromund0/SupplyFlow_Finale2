@@ -81,5 +81,26 @@ namespace SupplyFlow
             relVenda.Show();
             this.Close();
         }
+
+        private void btnEditarCard_Click(object sender, EventArgs e)
+        {
+            frmEditarCard editarCardapio = new frmEditarCard(admin, idUsuario, cargo);
+            editarCardapio.Show();
+            this.Close();
+        }
+
+        private void btnEditarInsumo_Click(object sender, EventArgs e)
+        {
+            frmEditarInsumo editInsumo = new frmEditarInsumo(admin, idUsuario, cargo);
+            editInsumo.Show();
+            this.Close();
+        }
+
+        private void btnEditarFunc_Click(object sender, EventArgs e)
+        {
+            frmEditarFunc editFunc = new frmEditarFunc(admin, idUsuario, cargo);
+            editFunc.Show();
+            this.Close();
+        }
     }
 }

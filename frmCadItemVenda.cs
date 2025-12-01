@@ -68,11 +68,6 @@ namespace SupplyFlow
 
         public void carregarLista()
         {
-            if (rdbAperitivo.Checked) categoria = "Aperitivo";
-            else if (rdbBebida.Checked) categoria = "Bebida";
-            else if (rdbEntrada.Checked) categoria = "Entrada";
-            else if (rdbPrato.Checked) categoria = "Prato Principal";
-            else if (rdbSobremesa.Checked) categoria = "Sobremesa";
                 try
                 {
                     string conexao = @"server=127.0.0.1;uid=root;pwd=1234;database=supplyflow;ConnectionTimeout=1";

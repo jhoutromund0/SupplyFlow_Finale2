@@ -1,8 +1,9 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Data;
 using System.Text;
-using MySql.Data.MySqlClient;
 using System.Windows.Forms;
+using static SupplyFlow.frmCadInsumo;
 
 namespace SupplyFlow
 {
@@ -537,5 +538,228 @@ namespace SupplyFlow
                 MessageBox.Show(sb.ToString());
             }
         }
+
+        //EDIÇÕES
+        public void editarCardapio(ClasseCardapio cardapio, int id)
+        {
+            try
+            {
+
+                string conexao = @"server=127.0.0.1;uid=root;pwd=1234;database=supplyflow;ConnectionTimeout=1";
+
+                using (var connection = new MySqlConnection(conexao))
+                {
+                    connection.Open();
+
+                    string sql = @"UPDATE cardapio 
+                       SET nome = @nome,
+                           descrição = @descricao,
+                           preço = @preco,
+                           categoria = @categoria
+                       WHERE idPrato = @id";
+
+                    using (var cmd = new MySqlCommand(sql, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@nome", cardapio.getNome());
+                        cmd.Parameters.AddWithValue("@descricao", cardapio.getDesc());
+                        cmd.Parameters.AddWithValue("@preco", cardapio.getPreco());
+                        cmd.Parameters.AddWithValue("@categoria", cardapio.getCategoria());
+                        cmd.Parameters.AddWithValue("@id", id);
+
+                        int linhasAfetadas = cmd.ExecuteNonQuery();
+
+                        if (linhasAfetadas == 0)
+                        {
+                            MessageBox.Show("Nenhum registro foi alterado. ID não encontrado.");
+                        }
+                    }
+                }
+            }
+            catch (MySqlException erro)
+            {
+                var sb = new StringBuilder();
+                sb.AppendLine("Erro Banco!");
+                sb.AppendLine(erro.GetType().ToString());
+                sb.AppendLine(erro.Message);
+                sb.AppendLine("\n" + erro.StackTrace);
+                MessageBox.Show(sb.ToString());
+            }
+            catch (Exception erro)
+            {
+                var sb = new StringBuilder();
+                sb.AppendLine("Exceção Desconhecida !!!");
+                sb.AppendLine(erro.GetType().ToString());
+                sb.AppendLine(erro.Message);
+                sb.AppendLine("\n" + erro.StackTrace);
+                MessageBox.Show(sb.ToString());
+            }
+        }
+
+        public void editarInsumo(ClasseInsumo insumo, int id)
+        {
+            try
+            {
+                string conexao = @"server=127.0.0.1;uid=root;pwd=1234;database=supplyflow;ConnectionTimeout=1";
+
+                using (var connection = new MySqlConnection(conexao))
+                {
+                    connection.Open();
+
+                    string sql = @"UPDATE Insumos
+                       SET quantidade_produto = @quantidade_produto,
+                           idProduto = @idProduto,
+                           idPrato = @idPrato
+                       WHERE idInsumo = @id";
+
+                    using (var cmd = new MySqlCommand(sql, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@quantidade_produto", insumo.getQtd());
+                        cmd.Parameters.AddWithValue("@idProduto", insumo.getIdProd());
+                        cmd.Parameters.AddWithValue("@idPrato", insumo.getIdCardapio());
+                        cmd.Parameters.AddWithValue("@id", id);
+
+                        int linhasAfetadas = cmd.ExecuteNonQuery();
+
+                        if (linhasAfetadas == 0)
+                        {
+                            MessageBox.Show("Nenhum registro foi alterado. ID não encontrado.");
+                        }
+                    }
+                }
+            }
+            catch (MySqlException erro)
+            {
+                var sb = new StringBuilder();
+                sb.AppendLine("Erro Banco!");
+                sb.AppendLine(erro.GetType().ToString());
+                sb.AppendLine(erro.Message);
+                sb.AppendLine("\n" + erro.StackTrace);
+                MessageBox.Show(sb.ToString());
+            }
+            catch (Exception erro)
+            {
+                var sb = new StringBuilder();
+                sb.AppendLine("Exceção Desconhecida !!!");
+                sb.AppendLine(erro.GetType().ToString());
+                sb.AppendLine(erro.Message);
+                sb.AppendLine("\n" + erro.StackTrace);
+                MessageBox.Show(sb.ToString());
+            }
+        }
+
+        public void editarItemvenda(ClasseItemVenda itemVenda, int id)
+        {
+            try
+            {
+                string conexao = @"server=127.0.0.1;uid=root;pwd=1234;database=supplyflow;ConnectionTimeout=1";
+
+                using (var connection = new MySqlConnection(conexao))
+                {
+                    connection.Open();
+
+                    string sql = @"UPDATE itens_venda
+                       SET quantidade = @quantidade,
+                           idVenda = @idVenda,
+                           idPrato = @idPrato
+                       WHERE idItensVenda = @id";
+
+                    using (var cmd = new MySqlCommand(sql, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@quantidade", itemVenda.getQuantidade());
+                        cmd.Parameters.AddWithValue("@idVenda", itemVenda.getIdVenda());
+                        cmd.Parameters.AddWithValue("@idPrato", itemVenda.getIdPrato());
+                        cmd.Parameters.AddWithValue("@id", id);
+
+                        int linhasAfetadas = cmd.ExecuteNonQuery();
+
+                        if (linhasAfetadas == 0)
+                        {
+                            MessageBox.Show("Nenhum registro foi alterado. ID não encontrado.");
+                        }
+                    }
+                }
+            }
+            catch (MySqlException erro)
+            {
+                var sb = new StringBuilder();
+                sb.AppendLine("Erro Banco!");
+                sb.AppendLine(erro.GetType().ToString());
+                sb.AppendLine(erro.Message);
+                sb.AppendLine("\n" + erro.StackTrace);
+                MessageBox.Show(sb.ToString());
+            }
+            catch (Exception erro)
+            {
+                var sb = new StringBuilder();
+                sb.AppendLine("Exceção Desconhecida !!!");
+                sb.AppendLine(erro.GetType().ToString());
+                sb.AppendLine(erro.Message);
+                sb.AppendLine("\n" + erro.StackTrace);
+                MessageBox.Show(sb.ToString());
+            }
+        }
+        public void editarFuncionario(ClasseFuncionario funcionario, int id)
+        {
+            try
+            {
+                string conexao = @"server=127.0.0.1;uid=root;pwd=1234;database=supplyflow;ConnectionTimeout=1";
+
+                using (var connection = new MySqlConnection(conexao))
+                {
+                    connection.Open();
+
+                    string sql = @"UPDATE funcionario
+                       SET nome = @nome,
+                            login = @login,
+                            senha = @senha,
+                            cargo = @cargo,
+                            salario = @salario,
+                            data_admissao = @data_admissao,
+                            telefone = @telefone,
+                            cpf = @cpf
+                       WHERE idUsuario = @id";
+
+                    using (var cmd = new MySqlCommand(sql, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@nome", funcionario.getNome());
+                        cmd.Parameters.AddWithValue("@login", funcionario.getLogin());
+                        cmd.Parameters.AddWithValue("@senha", funcionario.getSenha());
+                        cmd.Parameters.AddWithValue("@cargo", funcionario.getCargo());
+                        cmd.Parameters.AddWithValue("@salario", funcionario.getSalario());
+                        cmd.Parameters.AddWithValue("@data_admissao", funcionario.getDataAdm());
+                        cmd.Parameters.AddWithValue("@telefone", funcionario.getTelefone());
+                        cmd.Parameters.AddWithValue("@cpf", funcionario.getCpf());
+                        cmd.Parameters.AddWithValue("@id", id);
+
+                        int linhasAfetadas = cmd.ExecuteNonQuery();
+
+                        if (linhasAfetadas == 0)
+                        {
+                            MessageBox.Show("Nenhum registro foi alterado. ID não encontrado.");
+                        }
+                    }
+                }
+            }
+            catch (MySqlException erro)
+            {
+                var sb = new StringBuilder();
+                sb.AppendLine("Erro Banco!");
+                sb.AppendLine(erro.GetType().ToString());
+                sb.AppendLine(erro.Message);
+                sb.AppendLine("\n" + erro.StackTrace);
+                MessageBox.Show(sb.ToString());
+            }
+            catch (Exception erro)
+            {
+                var sb = new StringBuilder();
+                sb.AppendLine("Exceção Desconhecida !!!");
+                sb.AppendLine(erro.GetType().ToString());
+                sb.AppendLine(erro.Message);
+                sb.AppendLine("\n" + erro.StackTrace);
+                MessageBox.Show(sb.ToString());
+            }
+        }
     }
+    
+    
 }
