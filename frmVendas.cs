@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace SupplyFlow
 {
@@ -47,6 +48,7 @@ namespace SupplyFlow
             frmCardapio cardapio = new frmCardapio(admin, idUsuario, cargo);
             cardapio.Show();
             this.Close();
+
         }
 
         private void btnEditarVenda_Click(object sender, EventArgs e)

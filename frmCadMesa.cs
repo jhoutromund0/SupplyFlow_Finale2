@@ -116,6 +116,7 @@ namespace SupplyFlow
         // btnEditar: carrega mesa para edição (preenche campos) — não salva
         private void btnEditar_Click(object sender, EventArgs e)
         {
+
             if (txtPedido != null && !string.IsNullOrWhiteSpace(txtPedido.Text))
             {
                 if (!int.TryParse(txtPedido.Text.Trim(), out int idPedido) || idPedido <= 0)

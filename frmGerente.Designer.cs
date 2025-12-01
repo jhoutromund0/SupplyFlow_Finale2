@@ -39,7 +39,6 @@
             this.btnInsumo = new System.Windows.Forms.Button();
             this.btnCadMesa = new System.Windows.Forms.Button();
             this.btnEditarFunc = new System.Windows.Forms.Button();
-            this.btnEditarMesa = new System.Windows.Forms.Button();
             this.btnEditarCard = new System.Windows.Forms.Button();
             this.btnEditarInsumo = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -77,7 +76,7 @@
             this.lblTela.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lblTela.Location = new System.Drawing.Point(3, 15);
             this.lblTela.Name = "lblTela";
-            this.lblTela.Size = new System.Drawing.Size(131, 32);
+            this.lblTela.Size = new System.Drawing.Size(100, 24);
             this.lblTela.TabIndex = 2;
             this.lblTela.Text = "Gerência";
             // 
@@ -201,20 +200,6 @@
             this.btnEditarFunc.UseVisualStyleBackColor = false;
             this.btnEditarFunc.Click += new System.EventHandler(this.btnEditarFunc_Click);
             // 
-            // btnEditarMesa
-            // 
-            this.btnEditarMesa.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.btnEditarMesa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditarMesa.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnEditarMesa.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarMesa.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnEditarMesa.Location = new System.Drawing.Point(913, 199);
-            this.btnEditarMesa.Name = "btnEditarMesa";
-            this.btnEditarMesa.Size = new System.Drawing.Size(256, 46);
-            this.btnEditarMesa.TabIndex = 30;
-            this.btnEditarMesa.Text = "Editar Mesa";
-            this.btnEditarMesa.UseVisualStyleBackColor = false;
-            // 
             // btnEditarCard
             // 
             this.btnEditarCard.BackColor = System.Drawing.Color.DarkSlateGray;
@@ -222,7 +207,7 @@
             this.btnEditarCard.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEditarCard.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarCard.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnEditarCard.Location = new System.Drawing.Point(913, 287);
+            this.btnEditarCard.Location = new System.Drawing.Point(913, 194);
             this.btnEditarCard.Name = "btnEditarCard";
             this.btnEditarCard.Size = new System.Drawing.Size(256, 57);
             this.btnEditarCard.TabIndex = 31;
@@ -237,7 +222,7 @@
             this.btnEditarInsumo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEditarInsumo.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarInsumo.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnEditarInsumo.Location = new System.Drawing.Point(913, 391);
+            this.btnEditarInsumo.Location = new System.Drawing.Point(913, 287);
             this.btnEditarInsumo.Name = "btnEditarInsumo";
             this.btnEditarInsumo.Size = new System.Drawing.Size(256, 80);
             this.btnEditarInsumo.TabIndex = 32;
@@ -254,7 +239,6 @@
             this.ControlBox = false;
             this.Controls.Add(this.btnEditarInsumo);
             this.Controls.Add(this.btnEditarCard);
-            this.Controls.Add(this.btnEditarMesa);
             this.Controls.Add(this.btnEditarFunc);
             this.Controls.Add(this.btnCadMesa);
             this.Controls.Add(this.btnInsumo);
@@ -288,7 +272,6 @@
         private System.Windows.Forms.Button btnInsumo;
         private System.Windows.Forms.Button btnCadMesa;
         private System.Windows.Forms.Button btnEditarFunc;
-        private System.Windows.Forms.Button btnEditarMesa;
         private System.Windows.Forms.Button btnEditarCard;
         private System.Windows.Forms.Button btnEditarInsumo;
     }
